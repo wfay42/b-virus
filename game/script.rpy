@@ -59,6 +59,16 @@ label lay_in_bed:
     show sumire bed 05
     "Sumire awakens, completely taken by the bimbo virus. Large pink hearts stand in the center of her eyes, the telltale sign of the disease. The only thing she can do now is properly greet her guest."
 
+    s "Like, hey there! Heehee, would you like to go another round?"
+
+    scene bg bedroom bed 02
+    show sumire bed bj 01
+    "Sumire grabs ahold of the stranger member and doesn't hesitate to pull it straight into her mouth while looking up at him excitedly."
+
+    scene bg bedroom bed 03
+    show sumire bed sex 01
+    "It doesn't take long before Sumire is on her back receiving the full service.  She can't control the pleasure, and her eyes roll back into her head while her tongue sticks out as she has her first orgasm as a bimbo."
+
     jump end
 
 label put_on_shoes:
