@@ -4,35 +4,24 @@
 # name of the character.
 
 define s = Character("Sumire")
+
+# A smooth dissolve over 2 seconds
 define dissolve_2 = Dissolve(2)
 
 # The game starts here.
 
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg bedroom
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
     show sumire standing thinking
 
-    # These display lines of dialogue.
-
-    "You thought you had been hearing strange reports of what is going on outside"
-
+    "Sumire thought she had been hearing strange reports of what is going on outside"
     menu:
 
         "Lay in bed":
             jump lay_in_bed
 
-        "Put on shoes.":
-            jump put_on_shoes
+        "Turn on the TV.":
+            jump turn_on_tv
 
 label lay_in_bed:
     scene bg bedroom bed
@@ -71,7 +60,35 @@ label lay_in_bed:
 
     jump end
 
-label put_on_shoes:
+label turn_on_tv:
+    scene
+    show tv
+    "Something is on tv"
+
+    show news 01
+    "We bring you this special report"
+
+    show news 02
+    with dissolve_2
+    "We bring you this special report"
+    show news 03
+    with dissolve_2
+    "We bring you this special report"
+    show news 04
+    with dissolve_2
+    "We bring you this special report"
+    show news 05
+    with dissolve_2
+    "We bring you this special report"
+    show news 06
+    with dissolve_2
+    "We bring you this special report"
+    show news 07
+    with dissolve_2
+    "We bring you this special report"
+    show news 08
+    "We bring you this special report"
+
     jump end
 
 label end:
