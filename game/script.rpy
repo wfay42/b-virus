@@ -63,31 +63,40 @@ label lay_in_bed:
 label turn_on_tv:
     scene
     show tv
-    "Something is on tv"
+    "Sumire decides to kick back, relax, and watch some TV."
 
+    define z = Character("Zoe")
+    define a = Character("Anri")
     show news 01
-    "We bring you this special report"
+    z "We interrupt your normal broadcast to bring you this special report."
+    a "There have been reports of women suddenly changing hair color and acting ditzy."
 
     show news 02
     with dissolve_2
-    "We bring you this special report"
+    z "People should use the utmost caution."
+
     show news 03
     with dissolve_2
-    "We bring you this special report"
+    a "We recommend people stay indoors and don't let in any strangers."
+
     show news 04
     with dissolve_2
-    "We bring you this special report"
+    z "But like, meeting new people is totally fun, so maybe you should do that! A pretty lady I just met gave me a big kiss on my way to work today!"
+
     show news 05
     with dissolve_2
-    "We bring you this special report"
+    a "Teehee, no way! Same here!"
+
     show news 06
     with dissolve_2
-    "We bring you this special report"
+    z "Yup, so like, today is a great day to go out and make some new friends!"
+
     show news 07
     with dissolve_2
-    "We bring you this special report"
+    a "Totes! Or just make out, I mean hang out with an old friend!"
+
     show news 08
-    "We bring you this special report"
+    "We will return after a word from our sponsors."
 
     jump end
 
