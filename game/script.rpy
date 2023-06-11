@@ -17,11 +17,45 @@ label start:
     "Sumire thought she had been hearing strange reports of what is going on outside"
     menu:
 
+        "See what's inside the box.":
+            jump open_box
+
         "Lay in bed":
             jump lay_in_bed
 
         "Turn on the TV.":
             jump turn_on_tv
+
+label open_box:
+    scene bg bedroom floor
+    show sumire heels 01
+    "Sumire opens the box to find a pair of bright pink heels with some rather steep heels."
+    s "I definitely didn't order these things."
+    "Despite not knowing where the shoes came from, Sumire felt oddly compelled to put them on."
+
+    show sumire heels 02a
+    "She gently slides her right foot into the first heel. It fits perfectly."
+
+    show sumire heels 02b
+    "Without wobbling at all, she manages to get her left foot in with equal ease."
+
+    scene bg bedroom floor up
+    show sumire heels 03
+    s "Wow, these are surprisingly comfortable, despite those enormous heels. Oh well, better take them off."
+
+    scene bg bedroom floor
+    show sumire heels 02b
+    "But before she can take them off, something starts to change."
+
+    show sumire heels 04
+    with dissolve_2
+    s "Wait, was I, like, always wearing these sexy stockings?  Teehee, at least they go with my hot new shoes!"
+
+    scene bg bedroom floor up
+    show sumire heels 05
+    s "Like, I've gotta go show these off to my friends!"
+
+    return
 
 label lay_in_bed:
     scene bg bedroom bed
