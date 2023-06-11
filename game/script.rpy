@@ -4,6 +4,7 @@
 # name of the character.
 
 define s = Character("Sumire")
+default watched_tv = False
 
 # A smooth dissolve over 2 seconds
 define dissolve_2 = Dissolve(2)
@@ -11,10 +12,21 @@ define dissolve_2 = Dissolve(2)
 # The game starts here.
 
 label start:
+    scene bg bedroom door
+    "It was a normal weekend like any other for Sumire. She just got home from doing her daily chores when she finds a box on her doorstep."
+
+    show sumire standing holding box
+    s "That's strange, no return address. I don't remember ordering anything."
+
+    jump start_bedroom
+
+
+label start_bedroom:
     scene bg bedroom
+
     show sumire standing thinking
 
-    "Sumire thought she had been hearing strange reports of what is going on outside"
+    s "Oh well, time to relax now that I've got all of that out of the way."
     menu:
 
         "See what's inside the box.":
@@ -26,10 +38,27 @@ label start:
         "Turn on the TV.":
             jump turn_on_tv
 
+label bedroom_after_tv:
+    scene bg bedroom
+
+    show sumire standing surprised
+
+    s "What the hell was that! Is this for real!?"
+    menu:
+
+        "See what's inside the box.":
+            jump open_box
+
+        "Lay in bed":
+            jump lay_in_bed
+
+        "Call sister.":
+            jump turn_on_tv
+
 label open_box:
     scene bg bedroom floor
     show sumire heels 01
-    "Sumire opens the box to find a pair of bright pink heels with some rather steep heels."
+    "Curiosity gets the best of her, and Sumire opens the box to find a pair of bright pink pumps with some rather steep heels."
     s "I definitely didn't order these things."
     "Despite not knowing where the shoes came from, Sumire felt oddly compelled to put them on."
 
@@ -55,7 +84,7 @@ label open_box:
     show sumire heels 05
     s "Like, I've gotta go show these off to my friends!"
 
-    return
+    jump end
 
 label lay_in_bed:
     scene bg bedroom bed
@@ -132,7 +161,8 @@ label turn_on_tv:
     show news 08
     "We will return after a word from our sponsors."
 
-    jump end
+    $ watched_tv = True
+    jump bedroom_after_tv
 
 label end:
     # This ends the game.
