@@ -210,7 +210,7 @@ label arrive_at_moms:
     scene bg momhouse
     "Sumire drives the short distance to her mother's house where her sister, Eri is visiting. She enters with her heart pounding."
 
-    show eri standing phone mouthopen at tright
+    show eri standing smiling at tright
     show sumire standing surprised at tleft
     s "Eri! Where's mom!"
     e "Whoa, chill out, she's right here"
@@ -221,7 +221,13 @@ label arrive_at_moms:
     show sumire standing thinking at tleft
     s "Phew, you're both OK."
 
-
+    show rina bimbo standing smiling
+    with dissolve_2
+    show sumire bimbo02 standing smiling at tleft
+    with dissolve_2
+    show eri bimbo standing smiling at tright
+    with dissolve_2
+    ""
 
 label end:
     # This ends the game.
