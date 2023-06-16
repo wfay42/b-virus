@@ -4,6 +4,8 @@
 # name of the character.
 
 define s = Character("Sumire")
+define e = Character("Eri")
+define r = Character("Rina")
 default watched_tv = False
 
 # A smooth dissolve over 2 seconds
@@ -53,7 +55,7 @@ label bedroom_after_tv:
             jump lay_in_bed
 
         "Call sister.":
-            jump turn_on_tv
+            jump call_sister
 
 label open_box:
     scene bg bedroom floor
@@ -163,6 +165,26 @@ label turn_on_tv:
 
     $ watched_tv = True
     jump bedroom_after_tv
+
+label call_sister:
+    scene bg bedroom
+    show sumire standing phone mouthclosed
+    "Sumire tries calling her sister"
+
+    show sumire standing phone mouthopen
+    s "Come on Eri... Pick up!"
+
+    scene bg momhouse
+    show eri standing phone mouthopen
+    e "Hey sis! What's up?"
+    s "Eri, are you OK? Is mom OK?"
+    e "Huh? Yeah, of course we are. What's up with you?"
+    s "Haven't you seen the news? There's something weird going on."
+    e "Ha, the news? You know how mom doesn't have a TV in the house. If you're so worried, you should come over."
+
+    scene bg bedroom
+    show sumire standing phone mouthopen
+    s "That's a good idea, I'm heading over right now. Stay inside, don't go anywhere!"
 
 label end:
     # This ends the game.
