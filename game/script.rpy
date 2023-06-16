@@ -4,12 +4,19 @@
 # name of the character.
 
 define s = Character("Sumire")
-define e = Character("Eri")
-define r = Character("Rina")
+define e = Character("Eri", who_color="#017a01ff")
+define r = Character("Rina", who_color="#b56d26")
 default watched_tv = False
 
 # A smooth dissolve over 2 seconds
 define dissolve_2 = Dissolve(2)
+
+# Custom transformations for positioning
+transform tleft:
+    xpos -0.3
+transform tright:
+    xpos 0.3
+
 
 # The game starts here.
 
@@ -130,8 +137,8 @@ label turn_on_tv:
     show tv
     "Sumire decides to kick back, relax, and watch some TV."
 
-    define z = Character("Zoe")
-    define a = Character("Anri")
+    define z = Character("Zoe", who_color="#ba4242")
+    define a = Character("Anri", who_color="#ddacac")
     show news 01
     z "We interrupt your normal broadcast to bring you this special report."
     a "There have been reports of women suddenly changing hair color and acting ditzy."
@@ -185,6 +192,36 @@ label call_sister:
     scene bg bedroom
     show sumire standing phone mouthopen
     s "That's a good idea, I'm heading over right now. Stay inside, don't go anywhere!"
+
+    menu:
+
+        "See what's inside the box.":
+            s "Before I go over, I should check what's in this box."
+            jump open_box
+
+        "Lay in bed":
+            s "I should lay down for just a few seconds. I'm sure they'll be fine for a few minutes."
+            jump lay_in_bed
+
+        "Head over to mom's houes":
+            jump arrive_at_moms
+
+label arrive_at_moms:
+    scene bg momhouse
+    "Sumire drives the short distance to her mother's house where her sister, Eri is visiting. She enters with her heart pounding."
+
+    show eri standing phone mouthopen at tright
+    show sumire standing surprised at tleft
+    s "Eri! Where's mom!"
+    e "Whoa, chill out, she's right here"
+
+    show rina standing smiling
+    r "Hi honey, how are you doing?"
+
+    show sumire standing thinking at tleft
+    s "Phew, you're both OK."
+
+
 
 label end:
     # This ends the game.
