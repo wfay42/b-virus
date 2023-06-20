@@ -7,6 +7,9 @@ define s = Character("Sumire")
 define e = Character("Eri", who_color="#017a01ff")
 define r = Character("Rina", who_color="#b56d26")
 default watched_tv = False
+default floor_sumire_unchanged = True
+default floor_rina_unchanged = True
+default floor_eri_unchanged = True
 
 # A smooth dissolve over 2 seconds
 define dissolve_2 = Dissolve(2)
@@ -221,6 +224,100 @@ label arrive_at_moms:
     show sumire standing thinking at tleft
     s "Phew, you're both OK."
 
+    e "Now can you explain what's going on? Why do you seem so spooked?"
+
+    s "Right! I don't know why, but there's something weird going on where women are turning into blonde bimbos."
+    s "On the news they recommended staying indoors and avoiding others since it seems to be transferred between people."
+
+    show eri standing worried
+    e "Are you serious right now?  This seems ridiculous."
+
+    show rina standing worried
+    r "Your sister's right, Sumire. Maybe you just need to eat something."
+
+    show sumire standing surprised
+    s "No, I'm serious!"
+
+    "Suddenly there was a knock at the door."
+
+    show sumire standing thinking
+    show eri standing smiling
+    show rina standing smiling
+    r "You two sit tight while I see who that is."
+
+    menu:
+        "Let her see who is at the door.":
+            jump mom_open_door
+
+        "Stop her.":
+            s "No, mom, wait!"
+
+label mom_open_door:
+    hide rina
+    with dissolve
+    r "Oh hello there, how can I help you gentlemen?"
+
+    show sumire standing surprised
+    show eri standing worried
+    r "Oh, what are you doing? I didn't invite you in!"
+    s "Mom?"
+    e "Mom!"
+
+    scene bg momhouse floor
+    "Before they knew what was happening, the three women were brought to their knees by the three men at the door."
+
+    show sumire floor 01
+    show rina floor 01
+    show eri floor 01
+    s "Who the hell are you!? Get out of my mom's house."
+    r "I won't stand for this!"
+    e "Y... yeah, what they said."
+
+    "The three men open their trousers to reveal themselves fully engorged. As if instinctually they begin rubbing themselves. The only thing left to wonder is who will finish first."
+
+    jump floor_menu
+
+label floor_menu:
+    menu:
+        "Sumire":
+            jump floor_sumire
+        "Eri":
+            jump floor_eri
+
+label floor_sumire:
+    show sumire floor 02
+    "One man blows his load over Sumire's face, forcing her to close an eye."
+    s "Ughhh, disgusting!"
+
+    show sumire floor 03
+    with dissolve_2
+    "Despite her disgust, Sumire's hair changes to a golden blonde."
+
+    show sumire floor 04
+    with dissolve
+    s "Teehee, why does this, like, smell sweet?"
+
+    show sumire floor 05
+    with dissolve_2
+    s "Like, I'm so glad you could finish yourself so fast!"
+
+    show sumire floor 06
+    with dissolve_2
+    s "We should totes have some more fun!"
+
+    jump floor_menu
+
+label floor_eri:
+    show eri floor 06
+    with dissolve_2
+
+    show rina floor 06
+    with dissolve_2
+    "It was too late for Sumire and her family. They were now bimbos just like everyone else. They really shouldn't have opened the door."
+
+    return
+
+label unused_bimbo_standing:
     show rina bimbo standing smiling
     with dissolve_2
     show sumire bimbo02 standing smiling at tleft
