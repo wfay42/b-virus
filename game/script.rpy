@@ -250,7 +250,7 @@ label arrive_at_moms:
             jump mom_open_door
 
         "Stop her.":
-            s "No, mom, wait!"
+            s "No, mom, wait! Didn't you listen to me, you can't just open the door to anyone!"
 
 label mom_open_door:
     hide rina
@@ -279,10 +279,16 @@ label mom_open_door:
 
 label floor_menu:
     menu:
-        "Sumire":
+        "Sumire" if floor_sumire_unchanged:
             jump floor_sumire
-        "Eri":
+        "Rina" if floor_rina_unchanged:
+            jump floor_rina
+        "Eri" if floor_eri_unchanged:
             jump floor_eri
+
+    # NOTE: if the above menu has no options, logic will flow down to this line
+    "It was too late for Sumire and her family. They were now bimbos just like everyone else. They really shouldn't have opened the door."
+    return
 
 label floor_sumire:
     show sumire floor 02
@@ -305,17 +311,23 @@ label floor_sumire:
     with dissolve_2
     s "We should totes have some more fun!"
 
+    $ floor_sumire_unchanged = False
     jump floor_menu
 
 label floor_eri:
     show eri floor 06
     with dissolve_2
 
+    $ floor_eri_unchanged = False
+    jump floor_menu
+
+label floor_rina:
+
     show rina floor 06
     with dissolve_2
-    "It was too late for Sumire and her family. They were now bimbos just like everyone else. They really shouldn't have opened the door."
 
-    return
+    $ floor_rina_unchanged = False
+    jump floor_menu
 
 label unused_bimbo_standing:
     show rina bimbo standing smiling
