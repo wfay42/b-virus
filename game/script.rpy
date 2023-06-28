@@ -287,8 +287,12 @@ label floor_menu:
             jump floor_eri
 
     # NOTE: if the above menu has no options, logic will flow down to this line
-    "It was too late for Sumire and her family. They were now bimbos just like everyone else. They really shouldn't have opened the door."
-    return
+    "It was too late for Sumire and her family. They were now bimbos just like everyone else."
+
+    scene bg momhouse floor 02
+    show floor 01
+    "They really shouldn't have opened the door to those strangers."
+    jump end
 
 label floor_sumire:
     show sumire floor 02
@@ -315,16 +319,49 @@ label floor_sumire:
     jump floor_menu
 
 label floor_eri:
+    show eri floor 02
+    "Before she can look away, Eri gets a full facial from one of the mysterious intruders."
+    e "Eww, yuck! Did you seriously do what I think you did?"
+
+    show eri floor 03
+    with dissolve_2
+    e "It smells weird... It's making me kind of light headed."
+
+    show eri floor 04
+    with dissolve_2
+    e "Heehee, but the feeling is kind of fun."
+
+    show eri floor 05
+    with dissolve_2
+    e "Like, thanks for blowing that load all over me!"
+
     show eri floor 06
     with dissolve_2
+    e "But I am jealous I didn't get to help you! The next one is on me!"
 
     $ floor_eri_unchanged = False
     jump floor_menu
 
 label floor_rina:
+    show rina floor 02
+    "One intruder finishes himself, leaving his seed all over Rina's face. Rina sits unflinching, only averting her gaze slightly."
+    r "Disgusting... I will not stand for this in my own home!"
+
+    show rina floor 03
+    with dissolve_2
+    r "You should know I'm an attorney, and this is going to be very, very easy to prosecute."
+
+    show rina floor 04
+    with dissolve_2
+    r "And, uh, my doorbell camera footage will easily... like, is it getting hot in here?"
+
+    show rina floor 05
+    with dissolve_2
+    r "Like, yeah, I'm burning up!  What? I should show off more skin?"
 
     show rina floor 06
     with dissolve_2
+    r "Teehee, like, that's such a good idea!"
 
     $ floor_rina_unchanged = False
     jump floor_menu
