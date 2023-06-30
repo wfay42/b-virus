@@ -6,6 +6,7 @@
 define s = Character("Sumire")
 define e = Character("Eri", who_color="#017a01ff")
 define r = Character("Rina", who_color="#b56d26")
+define es = Character("Sumire & Eri", who_color="#090501")
 default watched_tv = False
 default floor_sumire_unchanged = True
 default floor_rina_unchanged = True
@@ -250,7 +251,167 @@ label arrive_at_moms:
             jump mom_open_door
 
         "Stop her.":
-            s "No, mom, wait! Didn't you listen to me, you can't just open the door to anyone!"
+            jump stop_mom_from_opening_door
+
+
+label stop_mom_from_opening_door:
+    show sumire standing surprised
+    s "No, mom, wait! Didn't you listen to me, you can't just open the door for anyone!"
+
+    show rina standing worried
+    r "Fine honey, you seem pretty shaken up about this, I won't do anything if you say I shouldn't."
+
+    show sumire standing thinking
+    show rina standing smiling
+    r "With that settled, can we have dinner? I'm sure you girls are starving."
+    e "Let's do it! Family dinner is why we came over tonight in the first place."
+
+    show sumire standing happy
+    s "OK, I guess we can relax for a bit."
+
+    # parallel:
+    hide sumire with dissolve
+    hide rina with dissolve
+    hide eri with dissolve
+
+    "The three women have a delicious home-cooked meal. They stay up and chat for a while until Rina says she wants to turn in for the night."
+
+    show sumire standing thinking at tleft
+    show rina standing smiling
+    show eri standing smiling at tright
+
+    r "Well, this has been another lovely family dinner, girls, but I'm going to get some sleep. Don't stay up too late yourselves."
+    hide rina with dissolve
+
+    e "So are you serious about this whole bimbo thing Sumire? It seems totally crazy."
+    s "For the hundredth time, yes!"
+
+    jump mom_bedroom
+
+label mom_bedroom:
+    scene bg none
+    "Rina enters her bedroom exhausted from the day, and still unsure what Sumire had been telling her."
+    show rina shoes 01
+    r "What a day. I hope everything is alright with Sumire. She's been so stressed out lately, the poor dear."
+    r "Oh well, tomorrow is another day. Just one more thing to do before bed."
+
+    window hide
+    show rina shoes 02
+    pause
+    window show
+    r "I just need to try these on to see if they're my size. They might have been delivered here by accident, but someone else's loss is my gain!"
+
+    scene bg momhouse
+    show sumire standing thinking at tleft
+    show eri standing smiling at tright
+    s "On top of that, there was this box that got delivered to my apartment. I didn't even bother looking into it."
+    e "Oh yeah? Mom said she got something too, but said she didn't know who it was from."
+
+    show sumire standing surprised
+    s "Wait really? Where is the box?"
+    e "I think mom took it into her room, why?"
+
+    show sumire standing thinking
+    s "I've got a bad feeling about this..."
+    e "Well, do what you want. I'm heading to bed. See you in the morning!"
+    hide eri with dissolve
+    s "Hmm, I can't shake the feeling I should check on mom..."
+
+    scene bg none
+    show rina shoes 03
+    r "Oh my! These heels are sky-high!"
+
+    show rina shoes 04
+    r "But they sure are gorgeous! They make my legs look amazing!"
+
+    "There is a knock at the door."
+
+    s "Hey mom, can I come in?"
+
+    r "Sure thing dear."
+
+    show rina shoes 05
+    s "Mom, be careful! You shouldn't accept gifts from strangers! Who knows if those are part of the thing on TV!"
+    r "Sumire, these things are completely safe. They can't possibly harm me, they're just shoes."
+
+    window hide
+    show rina shoes 06a with dissolve_2
+    pause
+    window show
+    r "Really sweet, I hope you're not jealous of these beautiful shoes. I can certainly get you your own pair."
+
+    show rina shoes 06b
+    s "Mom, NO! Your outfit changed, you look like a... like a..."
+
+    show rina shoes 07
+    r "Like a milf? Of course I do honey. You know your mumsy has always been a hottie."
+    s "What!? You've never talked like this before mom. I need to go and get help..."
+
+    show rina shoes 08
+    s "Mom no! Let go of me!"
+    r "Sumire deary, where are your manners? I know I taught you better than this! Like I said, I'm happy to get you some new clothes too."
+
+    show rina shoes 09
+    s "Ughhh, no! I'm not looking for new clothes! It feels like I'm burning hot, let me go before it's too late! Before..."
+
+    window hide
+    show rina shoes 10 with dissolve_2
+    pause
+    window show
+    s "Before, like, I change and..."
+
+    show rina shoes 11
+    s "Before I say, like, thanks for the outfit mom! You always have such great taste."
+    r "You're welcome sweety. Now how about we pay your sister a visit?"
+
+    jump eri_bedroom
+
+label eri_bedroom:
+    scene bg none
+    show eri shoes 01
+    "Eri lays on her bed after falling asleep surprisingly quickly."
+
+    show eri shoes 02
+    "Her feel dangle off the edge of the bed."
+
+    show eri shoes 03
+    "The door opens with the slightest creak as Rina and Sumire enter."
+
+    show eri shoes 04
+    "The two women slowly make their way to the foot of the bed without making a sound. Saying nothing, they pass a knowing look to one another."
+
+    show eri shoes 05
+    "Pulling out another pair of heels found in Rina's surprise delivery, Sumire slips the beautiful shoes onto her sister's feet."
+    s "(Whispering) These two are so cute! I kind of wish these were mine."
+
+    window hide
+    show eri shoes 06 with dissolve_2
+    pause
+    window show
+    "Like her sister and mother, Eri's clothes change with the addition of the heels."
+
+    show eri shoes 01
+    "Eri remains fast asleep not noticing the change happening to her."
+
+    window hide
+    show eri shoes 07 with dissolve_2
+    pause
+    window show
+    "The changes are fast, Eri wakes right up."
+
+    show eri shoes 08
+    e "Like, what are you two doing? Are we having a sleepover too?"
+
+    show eri shoes 09
+    e "I'd say we should totes do makeovers! Except we're already all dressed up and ready to party, so I guess we can skip that step."
+    s "Finding a party, that's totally the right idea! What do you think momma, you want to come too?"
+    r "Ha! You girls are so full of energy, even for this late hour."
+
+    show eri shoes 10
+    r "Alright, let's all go. Remember that your mother spent a decade dancing in shoes like these, so do try to keep up."
+    es "Yes, mother!"
+
+    jump last_end
 
 label mom_open_door:
     hide rina
@@ -378,4 +539,11 @@ label unused_bimbo_standing:
 label end:
     # This ends the game.
 
+    return
+
+label last_end:
+    scene black with dissolve
+    "You got the Good Ending."
+
+    # This ends the game.
     return
