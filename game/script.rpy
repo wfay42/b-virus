@@ -258,9 +258,13 @@ label arrive_at_moms:
     s "No, I'm serious!"
 
     "Suddenly there was a knock at the door."
+    jump mom_decision
 
-    show sumire standing thinking
-    show eri standing smiling
+label mom_decision:
+
+    scene bg momhouse
+    show sumire standing thinking at tleft
+    show eri standing smiling at tright
     show rina standing smiling
     r "You two sit tight while I see who that is."
 
@@ -307,7 +311,7 @@ label stop_mom_from_opening_door:
     jump mom_bedroom
 
 label mom_bedroom:
-    scene bg none
+    scene bg momhouse bedroom 01
     "Rina enters her bedroom exhausted from the day, and still unsure what Sumire had been telling her."
     show rina shoes 01
     r "What a day. I hope everything is alright with Sumire. She's been so stressed out lately, the poor dear."
@@ -471,7 +475,15 @@ label floor_menu:
     scene bg momhouse floor 02
     show floor 01
     "Although the three ladies all seemed ready for some more fun."
-    jump end
+
+    scene black with dissolve
+    "You got the Don't Open the Door for Strangers Ending."
+
+    # reset the values
+    $ floor_sumire_unchanged = True
+    $ floor_rina_unchanged = True
+    $ floor_eri_unchanged = True
+    jump mom_decision
 
 label floor_sumire:
     show sumire floor 02
@@ -561,7 +573,7 @@ label end:
 
 label last_end:
     scene black with dissolve
-    "You got the Good Ending."
+    "You got the Good Ending. Congratulations! Is this the end for Sumire? Are there others out there who might be able to cure the Bimbo Virus? Only time will tell."
 
     # This ends the game.
     return
