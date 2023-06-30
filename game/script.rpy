@@ -8,6 +8,7 @@ define e = Character("Eri", who_color="#017a01ff")
 define r = Character("Rina", who_color="#b56d26")
 define es = Character("Sumire & Eri", who_color="#090501")
 default watched_tv = False
+default called_sister = False
 default floor_sumire_unchanged = True
 default floor_rina_unchanged = True
 default floor_eri_unchanged = True
@@ -68,6 +69,23 @@ label bedroom_after_tv:
         "Call sister.":
             jump call_sister
 
+label bedroom_after_calling_sister:
+    scene bg bedroom
+    show sumire standing phone mouthopen
+    s "That's a good idea, I'm heading over right now. Stay inside, don't go anywhere!"
+
+    menu:
+        "See what's inside the box.":
+            s "Before I go over, I should check what's in this box."
+            jump open_box
+
+        "Lay in bed":
+            s "I should lay down for just a few seconds. I'm sure they'll be fine for a few minutes."
+            jump lay_in_bed
+
+        "Head over to mom's house":
+            jump arrive_at_moms
+
 label open_box:
     scene bg bedroom floor
     show sumire heels 01
@@ -97,7 +115,14 @@ label open_box:
     show sumire heels 05
     s "Like, I've gotta go show these off to my friends!"
 
-    jump end
+    scene black with dissolve
+    "You got the Open Box Ending."
+    if called_sister:
+        jump bedroom_after_calling_sister
+    elif watched_tv:
+        jump bedroom_after_tv
+    else:
+        jump start_bedroom
 
 label lay_in_bed:
     scene bg bedroom bed
@@ -134,7 +159,14 @@ label lay_in_bed:
     show sumire bed sex 01
     "It doesn't take long before Sumire is on her back receiving the full service.  She can't control the pleasure, and her eyes roll back into her head while her tongue sticks out as she has her first orgasm as a bimbo."
 
-    jump end
+    scene black with dissolve
+    "You got the Lay In Bed Ending."
+    if called_sister:
+        jump bedroom_after_calling_sister
+    elif watched_tv:
+        jump bedroom_after_tv
+    else:
+        jump start_bedroom
 
 label turn_on_tv:
     scene
@@ -193,22 +225,8 @@ label call_sister:
     s "Haven't you seen the news? There's something weird going on."
     e "Ha, the news? You know how mom doesn't have a TV in the house. If you're so worried, you should come over."
 
-    scene bg bedroom
-    show sumire standing phone mouthopen
-    s "That's a good idea, I'm heading over right now. Stay inside, don't go anywhere!"
-
-    menu:
-
-        "See what's inside the box.":
-            s "Before I go over, I should check what's in this box."
-            jump open_box
-
-        "Lay in bed":
-            s "I should lay down for just a few seconds. I'm sure they'll be fine for a few minutes."
-            jump lay_in_bed
-
-        "Head over to mom's houes":
-            jump arrive_at_moms
+    $ called_sister = True
+    jump bedroom_after_calling_sister
 
 label arrive_at_moms:
     scene bg momhouse
@@ -448,11 +466,11 @@ label floor_menu:
             jump floor_eri
 
     # NOTE: if the above menu has no options, logic will flow down to this line
-    "It was too late for Sumire and her family. They were now bimbos just like everyone else."
+    "Sumire and her family had become bimbos, just as she had been trying to warn her family about. Maybe they shouldn't have opened the door for those strangers."
 
     scene bg momhouse floor 02
     show floor 01
-    "They really shouldn't have opened the door to those strangers."
+    "Although the three ladies all seemed ready for some more fun."
     jump end
 
 label floor_sumire:
