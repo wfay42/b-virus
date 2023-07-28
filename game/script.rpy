@@ -153,7 +153,7 @@ label lay_in_bed:
 
     scene bg bedroom bed 02
     show sumire bed bj 01
-    "Sumire grabs ahold of the stranger member and doesn't hesitate to pull it straight into her mouth while looking up at him excitedly."
+    "Sumire grabs ahold of the stranger's member and doesn't hesitate to pull it straight into her mouth while looking up at him excitedly."
 
     scene bg bedroom bed 03
     show sumire bed sex 01
@@ -394,7 +394,7 @@ label eri_bedroom:
     "Eri lays on her bed after falling asleep surprisingly quickly."
 
     show eri shoes 02
-    "Her feel dangle off the edge of the bed."
+    "Her feet dangle off the edge of the bed."
 
     show eri shoes 03
     "The door opens with the slightest creak as Rina and Sumire enter."
